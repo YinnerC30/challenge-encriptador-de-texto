@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Encriptador y desencriptador de texto</title>
+    <script src="js/algoritmo.js" defer>
+    </script>
 </head>
 <body>
-    <script src="js/algoritmo.js">
-    </script>
+    <textarea name="" id="areaEntrada" cols="30" rows="10"></textarea>
+    <button type="submit" onclick="enviarTextoNormal()">Encriptar</button>
+    <button type="submit" onclick="enviarTextoEncriptado()">Desencriptar</button>
+    <textarea name="" id="areaSalida" cols="30" rows="10"></textarea>
+    <button id="copiarTexto" onclick="copiarTexto()">Copiar</button>
 </body>
 </html>
