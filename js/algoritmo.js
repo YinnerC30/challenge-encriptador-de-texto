@@ -1,36 +1,14 @@
-// Obtengo los elementos HTML
+//--- Obtengo los elementos HTML
 
-function obtenerEntrada(){
+function obtenerEntrada() {
     var Entrada = document.getElementById('areaEntrada');
     return Entrada;
 }
 
-function obtenerSalida(){
+function obtenerSalida() {
     var Salida = document.getElementById("areaSalida");
     return Salida;
 }
-
-
-function enviarTextoNormal(){
-    let Entrada = obtenerEntrada();
-    let Salida = obtenerSalida();
-    let textoEntrada = Entrada.value;
-    textoEntrada = encriptarTexto(textoEntrada);
-    /* textoEntrada = desencriptarTexto(textoEntrada); */
-    Salida.innerText = textoEntrada;
-    console.log(textoEntrada);
-}
-
-function enviarTextoEncriptado(){
-    let Entrada = obtenerEntrada();
-    let Salida = obtenerSalida();
-    let textoEntrada = Entrada.value;
-    textoEntrada = desencriptarTexto(textoEntrada);
-    /* textoEntrada = encriptarTexto(textoEntrada); */
-    Salida.innerText = textoEntrada;
-    console.log(textoEntrada);
-}
-
 
 //--- Creo las funciones necesarias para encriptar una cadena de texto
 
@@ -102,7 +80,7 @@ function desencriptarPalabra(letra, letraEncriptada) {
 }
 
 function concatenarPalabras(lista) {
-    /* 
+    /*
     Una vez completado el procesos de remplazo de valores, se reunen las palabras de la lista, para unirlas en una nueva cadena, con los
     valores correctos.
      */
@@ -149,21 +127,29 @@ function desencriptarTexto(texto) {
 
 }
 
-function copiarTexto(){
+//--- Funciones de los botones de la pagina
+function enviarTextoNormal() {
+    let Entrada = obtenerEntrada();
+    let Salida = obtenerSalida();
+    let textoEntrada = Entrada.value;
+    textoEntrada = encriptarTexto(textoEntrada);
+    /* textoEntrada = desencriptarTexto(textoEntrada); */
+    Salida.innerText = textoEntrada;
+    console.log(textoEntrada);
+}
+
+function enviarTextoEncriptado() {
+    let Entrada = obtenerEntrada();
+    let Salida = obtenerSalida();
+    let textoEntrada = Entrada.value;
+    textoEntrada = desencriptarTexto(textoEntrada);
+    /* textoEntrada = encriptarTexto(textoEntrada); */
+    Salida.innerText = textoEntrada;
+    console.log(textoEntrada);
+}
+
+function copiarTexto() {
     let Salida = obtenerSalida();
     Salida.select();
     navigator.clipboard.writeText(Salida.value);
 }
-
-/* var entrada = "No mames amigo esto es genial, lo logre vida hp";
-
-console.log("Esta es la cadena original:")
-console.log(entrada);
-
-console.log("Esta es la cadena encriptada:")
-var textoEncriptado = encriptarTexto(entrada);
-console.log(textoEncriptado);
-
-console.log("Esta es la cadena sin encriptación:")
-console.log(desencriptarTexto(textoEncriptado)); */
-
