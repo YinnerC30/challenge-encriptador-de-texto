@@ -12,11 +12,22 @@
 </head>
 
 <body>
-    <textarea name="" id="areaEntrada" cols="30" rows="10"></textarea>
-    <button type="submit" onclick="enviarTextoNormal()">Encriptar</button>
-    <button type="submit" onclick="enviarTextoEncriptado()">Desencriptar</button>
-    <textarea name="" id="areaSalida" cols="30" rows="10"></textarea>
-    <button id="copiarTexto" onclick="copiarTexto()">Copiar</button>
+    <div id="area-entrada">
+        <div>
+            <textarea name="" id="areaEntrada" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea>
+            <p>Solo letras minusculas y sin acentos</p>
+        </div>
+        <div>
+            <button type="submit" onclick="enviarTextoNormal()">Encriptar</button>
+            <button type="submit" onclick="enviarTextoEncriptado()">Desencriptar</button>
+        </div>
+    </div>
+
+    <div id="area-salida">
+        <textarea name="" id="areaSalida" cols="30" rows="10"></textarea>
+        <button id="copiarTexto" onclick="copiarTexto()">Copiar</button>
+    </div>
+    <button onclick="borrar()">Borrar</button>
 </body>
 
 </html>

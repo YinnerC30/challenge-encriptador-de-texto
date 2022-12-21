@@ -133,8 +133,7 @@ function enviarTextoNormal() {
     let Salida = obtenerSalida();
     let textoEntrada = Entrada.value;
     textoEntrada = encriptarTexto(textoEntrada);
-    /* textoEntrada = desencriptarTexto(textoEntrada); */
-    Salida.innerText = textoEntrada;
+    Salida.value = textoEntrada;
     console.log(textoEntrada);
 }
 
@@ -143,8 +142,7 @@ function enviarTextoEncriptado() {
     let Salida = obtenerSalida();
     let textoEntrada = Entrada.value;
     textoEntrada = desencriptarTexto(textoEntrada);
-    /* textoEntrada = encriptarTexto(textoEntrada); */
-    Salida.innerText = textoEntrada;
+    Salida.value = textoEntrada;
     console.log(textoEntrada);
 }
 
@@ -152,4 +150,18 @@ function copiarTexto() {
     let Salida = obtenerSalida();
     Salida.select();
     navigator.clipboard.writeText(Salida.value);
+}
+
+function borrar(){
+    let entrada = obtenerEntrada();
+    let salida = obtenerSalida();
+    entrada.value = "";
+    salida.value = "";
+    delete entrada;
+    delete salida;
+    enfocarEntrada();
+}
+
+function enfocarEntrada(){
+    obtenerEntrada().focus();
 }
