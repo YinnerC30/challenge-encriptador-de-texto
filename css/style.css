@@ -1,4 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300&display=swap');
+
 body {
-    background-color: #D9D9D9;
-    font-family: sans-serif;
+  background-color: #f3f5fc;
+  font-family: 'Chivo Mono', monospace;
+  /* width: 100%;
+  height: 100vh; */
 }
+
+header {
+  width: 100vh;
+  height: 10vh;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
+    text-align: center;
+}
+
+#contenedor {
+  width: 100%;
+  /* /* /* height: 40vh; */
+  display: flex;
+}
+
+#areaEntrada,
+#areaSalida {
+    font-family: 'Chivo Mono', monospace;
+  font-size: 30px;
+  border: none;
+  outline: none;
+  color: #052051;
+  background-color: transparent;
+}
+
+#areaSalida {
+  color: #343a40;
+  display: none;
+}
+
+#area-entrada {
+  /* display: inline-block; */
+  /* background-color: #e9ecf8; */
+  border-radius: 20px;
+  padding: 20px;
+  padding-left: 50px;
+  padding-bottom: 20px;
+  width: 60%;
+  height: 80vh;
+}
+
+#area-salida {
+  display: inline-block;
+  background-color: #ced4da;
+  border-radius: 20px;
+  padding: 20px;
+  padding-bottom: 20px;
+  width: 30%;
+  height: 80vh;
+}
+
+textarea#areaEntrada,
+textarea#areaSalida {
+  width: 100%;
+  height: 90%;
+  resize: none;
+}
+
+textarea::placeholder {
+  /* color: #052051; */
+  color: #495057;
+}
+
+.botones {
+  display: block;
+  margin: auto;
+}
+
+.boton {
+    font-family: 'Chivo Mono', monospace;
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 10px;
+  cursor: pointer;
+  width: 40%;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#btn-encriptar {
+  background-color: #052051;
+  color: #ffffff;
+}
+
+#btn-desencriptar,
+#btn-copiarTexto {
+  background-color: #ffffff;
+  color: #052051;
+  border: 1px solid #052051;
+}
+#btn-copiarTexto {
+  display: none;
+  margin: auto;
+  margin-top: 10px;
+}
+
+#btn-encriptar:hover {
+  background-color: #356ea9;
+  transition: 500ms;
+}
+#btn-desencriptar:hover,
+#btn-copiarTexto:hover {
+  background-color: #ced4da;
+  transition: 500ms;
+}
+/* #btn-copiarTexto:hover {
+  background-color: #ced4da;
+  transition: 500ms;
+} */
+
+#figura-muneco {
+    width: 50vh;
+    height: 50vh;
+}
+
+/* @media (max-width: 768px) {
+  #area-entrada {
+    width: 100%;
+    height: 300px;
+  }
+  #area-salida {
+    width: 100%;
+    height: 300px;
+  }
+} */

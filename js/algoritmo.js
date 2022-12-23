@@ -10,6 +10,13 @@ function obtenerSalida() {
     return Salida;
 }
 
+function obtenerBoton() {
+    return document.getElementById("btn-copiarTexto");
+}
+
+function obtenerAviso() {
+    return document.getElementById("info-area-vacia");
+}
 //--- Creo las funciones necesarias para encriptar una cadena de texto
 
 function encriptarLetra(letra) {
@@ -129,21 +136,35 @@ function desencriptarTexto(texto) {
 
 //--- Funciones de los botones de la pagina
 function enviarTextoNormal() {
-    let Entrada = obtenerEntrada();
-    let Salida = obtenerSalida();
-    let textoEntrada = Entrada.value;
-    textoEntrada = encriptarTexto(textoEntrada);
-    Salida.value = textoEntrada;
-    console.log(textoEntrada);
+    if (validarContenido()) {
+        mostrarBoton();
+        ocultarAviso();
+        let Entrada = obtenerEntrada();
+        let Salida = obtenerSalida();
+        let textoEntrada = Entrada.value;
+        textoEntrada = textoEntrada.toLowerCase();
+        textoEntrada = encriptarTexto(textoEntrada);
+        Salida.value = textoEntrada;
+        console.log(textoEntrada);
+    }
+    /* else {
+        alert("El campo de entrada esta vacio!")
+    } */
+
 }
 
 function enviarTextoEncriptado() {
-    let Entrada = obtenerEntrada();
-    let Salida = obtenerSalida();
-    let textoEntrada = Entrada.value;
-    textoEntrada = desencriptarTexto(textoEntrada);
-    Salida.value = textoEntrada;
-    console.log(textoEntrada);
+    if (validarContenido()) {
+        mostrarBoton();
+        ocultarAviso();
+        let Entrada = obtenerEntrada();
+        let Salida = obtenerSalida();
+        let textoEntrada = Entrada.value;
+        textoEntrada = textoEntrada.toLowerCase();
+        textoEntrada = desencriptarTexto(textoEntrada);
+        Salida.value = textoEntrada;
+        console.log(textoEntrada);
+    }
 }
 
 function copiarTexto() {
@@ -152,7 +173,7 @@ function copiarTexto() {
     navigator.clipboard.writeText(Salida.value);
 }
 
-function borrar(){
+function borrar() {
     let entrada = obtenerEntrada();
     let salida = obtenerSalida();
     entrada.value = "";
@@ -162,6 +183,23 @@ function borrar(){
     enfocarEntrada();
 }
 
-function enfocarEntrada(){
+function enfocarEntrada() {
     obtenerEntrada().focus();
+}
+
+function mostrarBoton() {
+    let botonCopiar = obtenerBoton();
+    botonCopiar.style.display = 'block';
+}
+
+
+function ocultarAviso() {
+    let aviso = obtenerAviso().style.display = 'none';
+    obtenerSalida().style.display = 'block';
+}
+
+function validarContenido() {
+    let entrada = obtenerEntrada();
+    let contenido = entrada.value;
+    return contenido != "" ? true : false;
 }

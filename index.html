@@ -1,33 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/3064/3064353.png" type="image/x-icon">
     <title>Encriptador y desencriptador de texto</title>
     <script src="js/algoritmo.js" defer>
     </script>
 </head>
 
 <body>
-    <div id="area-entrada">
-        <div>
-            <textarea name="" id="areaEntrada" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea>
-            <p>Solo letras minusculas y sin acentos</p>
-        </div>
-        <div>
-            <button type="submit" onclick="enviarTextoNormal()">Encriptar</button>
-            <button type="submit" onclick="enviarTextoEncriptado()">Desencriptar</button>
-        </div>
-    </div>
+    <header>
+        <img src="img/Logo.svg" alt="logo-alura">
+    </header>
+    <div id="contenedor">
+        <div id="area-entrada">
 
-    <div id="area-salida">
-        <textarea name="" id="areaSalida" cols="30" rows="10"></textarea>
-        <button id="copiarTexto" onclick="copiarTexto()">Copiar</button>
+            <textarea name="" id="areaEntrada" placeholder="Ingrese el texto aqui" autofocus></textarea>
+            <!-- <p>Solo letras minusculas y sin acentos</p> -->
+            <div class="botones">
+                <button type="submit" id="btn-encriptar" onclick="enviarTextoNormal()" class="boton">Encriptar</button>
+                <button type="submit" id="btn-desencriptar" onclick="enviarTextoEncriptado()" class="boton">Desencriptar</button>
+            </div>
+        </div>
+
+        <div id="area-salida">
+            <textarea name="" id="areaSalida" readonly></textarea>
+            <div id="info-area-vacia">
+                <img id="figura-muneco" src="img/Muñeco.svg" alt="">
+                <h2>Ningún mensaje fue encontrado</h2>
+                <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+            </div>
+            <div class="botones">
+                <button id="btn-copiarTexto" class="boton" onclick="copiarTexto()">Copiar</button>
+                <!-- <button onclick="borrar()">Borrar</button> -->
+            </div>
+        </div>
     </div>
-    <button onclick="borrar()">Borrar</button>
 </body>
 
 </html>
