@@ -147,9 +147,9 @@ function enviarTextoNormal() {
         Salida.value = textoEntrada;
         console.log(textoEntrada);
     }
-    /* else {
-        alert("El campo de entrada esta vacio!")
-    } */
+    else {
+        mostrarAviso();
+    }
 
 }
 
@@ -164,6 +164,9 @@ function enviarTextoEncriptado() {
         textoEntrada = desencriptarTexto(textoEntrada);
         Salida.value = textoEntrada;
         console.log(textoEntrada);
+    }
+    else {
+        mostrarAviso();
     }
 }
 
@@ -197,6 +200,13 @@ function ocultarAviso() {
     let aviso = obtenerAviso().style.display = 'none';
     obtenerSalida().style.display = 'block';
 }
+
+function mostrarAviso() {
+    let aviso = obtenerAviso().style.display = 'block';
+    obtenerSalida().style.display = 'none';
+}
+
+
 
 function validarContenido() {
     let entrada = obtenerEntrada();

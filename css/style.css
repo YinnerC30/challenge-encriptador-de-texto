@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300&display=swap');
+:root {
+  --color-fondo: blue;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300&display=swap");
 
 body {
   background-color: #f3f5fc;
-  font-family: 'Chivo Mono', monospace;
-  /* width: 100%;
-  height: 100vh; */
+  font-family: "Chivo Mono", monospace;
 }
 
 header {
@@ -13,13 +15,13 @@ header {
 }
 
 h2 {
-    font-size: 30px;
-    text-align: center;
+  font-size: 30px;
+  text-align: center;
 }
 
 p {
-    font-size: 20px;
-    text-align: center;
+  font-size: 20px;
+  text-align: center;
 }
 
 #contenedor {
@@ -30,7 +32,7 @@ p {
 
 #areaEntrada,
 #areaSalida {
-    font-family: 'Chivo Mono', monospace;
+  /* font-family: "Chivo Mono", monospace; */
   font-size: 30px;
   border: none;
   outline: none;
@@ -82,13 +84,13 @@ textarea::placeholder {
 }
 
 .boton {
-    font-family: 'Chivo Mono', monospace;
+  /* font-family: "Chivo Mono", monospace; */
   border: none;
   border-radius: 15px;
   padding: 15px;
   margin: 10px;
   cursor: pointer;
-  width: 40%;
+  width: 45%;
   font-size: 15px;
   font-weight: bold;
 }
@@ -125,17 +127,85 @@ textarea::placeholder {
 } */
 
 #figura-muneco {
-    width: 50vh;
-    height: 50vh;
+  width: 80%;
+  height: 40vh;
+  margin: auto;
 }
 
-/* @media (max-width: 768px) {
-  #area-entrada {
-    width: 100%;
-    height: 300px;
+@media (max-width: 768px) {
+  #contenedor {
+    display: inline-block;
   }
-  #area-salida {
+
+  #area-entrada {
+    display: block;
+    width: 80%;
+    height: 60vh;
+    margin: auto;
+  }
+
+  #figura-muneco {
+    display: none;
+  }
+
+  textarea#areaSalida {
     width: 100%;
-    height: 300px;
+    height: 70%;
+    resize: none;
+  }
+
+  #area-salida {
+    display: block;
+    width: 80%;
+    height: 20vh;
+    margin: auto;
+    /* height: 300px; */
+  }
+
+  #info-area-vacia {
+    margin-top: 80px;
+  }
+
+  #btn-copiarTexto {
+    width: 80%;
+  }
+}
+
+/* @media (max-width: 375px) {
+  #contenedor {
+    display: inline-block;
+  }
+
+  #area-entrada {
+    display: block;
+    width: 80%;
+    height: 60vh;
+    margin: auto;
+  }
+
+  #figura-muneco {
+    display: none;
+  }
+
+  textarea#areaSalida {
+    width: 100%;
+    height: 70%;
+    resize: none;
+  }
+
+  #area-salida {
+    display: block;
+    width: 80%;
+    height: 20vh;
+    margin: auto;
+    /* height: 300px; */
+  }
+
+  #info-area-vacia {
+    margin-top: 80px;
+  }
+
+  #btn-copiarTexto {
+    width: 80%;
   }
 } */
