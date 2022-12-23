@@ -171,41 +171,63 @@ textarea::placeholder {
   }
 }
 
-/* @media (max-width: 375px) {
+@media (max-width: 375px) {
   #contenedor {
     display: inline-block;
+    width: 100%;
+    /* height: 100vh; */
   }
 
   #area-entrada {
-    display: block;
-    width: 80%;
-    height: 60vh;
+    display: inline-block;
+    padding: 0;
+    padding-bottom: 20px;
+    width: 90%;
+    height: 50vh;
     margin: auto;
+  }
+
+  textarea#areaEntrada {
+    width: 100%;
+    height: 70%;
+  }
+
+ #botones {
+    display: inline-block;
+    width: 100%;
+    height: 40%;
+ }
+
+  #btn-encriptar,#btn-desencriptar {
+    display: inline-block;
+    width: 100%;
+    
   }
 
   #figura-muneco {
     display: none;
   }
 
-  textarea#areaSalida {
-    width: 100%;
-    height: 70%;
-    resize: none;
+  #area-salida {
+    display: inline-block;
+    padding: 0;
+    /* padding-bottom: 200px; */
+    width: 90%;
+    height: 25vh;
+    margin: auto;
   }
 
-  #area-salida {
-    display: block;
-    width: 80%;
-    height: 20vh;
-    margin: auto;
-    /* height: 300px; */
+  textarea#areaSalida {
+    width: 100%;
+    height: 60%;
   }
 
   #info-area-vacia {
-    margin-top: 80px;
+    margin-top: 0;
   }
 
   #btn-copiarTexto {
     width: 80%;
+    /* margin-bottom: 20px; */
   }
-} */
+}
