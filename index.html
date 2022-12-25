@@ -22,18 +22,26 @@
 
             <textarea name="" id="areaEntrada" placeholder="Ingrese el texto aqui" autofocus></textarea>
             <!-- <p>Solo letras minusculas y sin acentos</p> -->
+            <div id="mensaje-informativo">
+                <img src="img/warning.svg" alt="warning" width="16" height="16">
+                <span>
+                    Solo letras minúsculas y sin acentos
+                </span>
+            </div>
             <div class="botones">
                 <button type="submit" id="btn-encriptar" onclick="enviarTextoNormal()" class="boton">Encriptar</button>
-                <button type="submit" id="btn-desencriptar" onclick="enviarTextoEncriptado()" class="boton">Desencriptar</button>
+                <button type="submit" id="btn-desencriptar" onclick="enviarTextoEncriptado()"
+                    class="boton">Desencriptar</button>
             </div>
+
         </div>
 
         <div id="area-salida">
             <textarea name="" id="areaSalida" readonly></textarea>
             <div id="info-area-vacia">
                 <img id="figura-muneco" src="img/Muñeco.svg" alt="">
-                <h2>Ningún mensaje fue encontrado</h2>
-                <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                <p id="aviso-grande">Ningún mensaje fue encontrado</p>
+                <p id="descripcion-aviso">Ingresa el texto que desees encriptar o desencriptar.</p>
             </div>
             <div class="botones">
                 <button id="btn-copiarTexto" class="boton" onclick="copiarTexto()">Copiar</button>
