@@ -14,6 +14,10 @@ header {
   height: 10vh;
 }
 
+header #logo-alura {
+  margin-top: 10px;
+}
+
 h2 {
   font-size: 30px;
   text-align: center;
@@ -25,14 +29,12 @@ p {
 }
 
 #contenedor {
-  width: 100%;
-  /* /* /* height: 40vh; */
+  width: 100vw;
   display: flex;
 }
 
 #areaEntrada,
 #areaSalida {
-  /* font-family: "Chivo Mono", monospace; */
   font-size: 30px;
   border: none;
   outline: none;
@@ -46,12 +48,9 @@ p {
 }
 
 #area-entrada {
-  /* display: inline-block; */
-  /* background-color: #e9ecf8; */
+
   border-radius: 20px;
-  padding: 20px;
-  padding-left: 50px;
-  padding-bottom: 20px;
+  padding: 10px;
   width: 60vw;
   height: 80vh;
 }
@@ -60,31 +59,29 @@ p {
   display: inline-block;
   background-color: #ced4da;
   border-radius: 20px;
-  padding: 20px;
-  padding-bottom: 20px;
-  width: 30vw;
+  padding: 10px;
+  width: 35vw;
   height: 80vh;
 }
 
 textarea#areaEntrada,
 textarea#areaSalida {
-  width: 100vw;
+  width: 100%;
   height: 70vh;
   resize: none;
 }
 
 textarea::placeholder {
-  /* color: #052051; */
   color: #495057;
 }
 
 .botones {
-  display: block;
-  margin: auto;
+  width: 100%;
+  height: 10vh;
 }
 
 .boton {
-  /* font-family: "Chivo Mono", monospace; */
+  font-family: "Chivo Mono", monospace;
   border: none;
   border-radius: 15px;
   padding: 15px;
@@ -121,26 +118,25 @@ textarea::placeholder {
   background-color: #ced4da;
   transition: 500ms;
 }
-/* #btn-copiarTexto:hover {
-  background-color: #ced4da;
-  transition: 500ms;
-} */
+
 
 #figura-muneco {
-  width: 80%;
-  height: 40vh;
+  width: 100%;
+  height: 50vh;
   margin: auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 375px) {
   #contenedor {
     display: inline-block;
+    width: 100vw;
   }
 
   #area-entrada {
-    display: block;
-    width: 80%;
-    height: 60vh;
+    display: inline-block;
+    padding-left: 0;
+    width: 80vw;
+    height: 40vh;
     margin: auto;
   }
 
@@ -159,7 +155,6 @@ textarea::placeholder {
     width: 80%;
     height: 20vh;
     margin: auto;
-    /* height: 300px; */
   }
 
   #info-area-vacia {
@@ -171,11 +166,11 @@ textarea::placeholder {
   }
 }
 
-@media (max-width: 375px) {
+
+/* @media (max-width: 375px) {
   #contenedor {
     display: inline-block;
     width: 100%;
-    /* height: 100vh; */
   }
 
   #area-entrada {
@@ -192,13 +187,13 @@ textarea::placeholder {
     height: 70%;
   }
 
- #botones {
+  #botones {
     display: inline-block;
     width: 100%;
     height: 40%;
  }
 
-  #btn-encriptar,#btn-desencriptar {
+ #btn-encriptar,#btn-desencriptar {
     display: inline-block;
     width: 100%;
     
@@ -211,7 +206,6 @@ textarea::placeholder {
   #area-salida {
     display: inline-block;
     padding: 0;
-    /* padding-bottom: 200px; */
     width: 90%;
     height: 25vh;
     margin: auto;
@@ -228,6 +222,5 @@ textarea::placeholder {
 
   #btn-copiarTexto {
     width: 80%;
-    /* margin-bottom: 20px; */
   }
-}
+} */
