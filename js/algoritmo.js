@@ -1,3 +1,5 @@
+ocultarAdvertencia();
+
 //--- Obtengo los elementos HTML
 
 function obtenerEntrada() {
@@ -16,6 +18,10 @@ function obtenerBoton() {
 
 function obtenerAviso() {
     return document.getElementById("info-area-vacia");
+}
+
+function obtenerAdvertencia() {
+    return document.getElementById("mensaje-informativo");
 }
 //--- Creo las funciones necesarias para encriptar una cadena de texto
 
@@ -139,16 +145,18 @@ function enviarTextoNormal() {
     if (validarContenido()) {
         mostrarBoton();
         ocultarAviso();
+        ocultarAdvertencia();
         let Entrada = obtenerEntrada();
         let Salida = obtenerSalida();
         let textoEntrada = Entrada.value;
-        textoEntrada = textoEntrada.toLowerCase();
+        /* textoEntrada = textoEntrada.toLowerCase(); */
         textoEntrada = encriptarTexto(textoEntrada);
         Salida.value = textoEntrada;
         console.log(textoEntrada);
-    }
-    else {
+    } else {
         mostrarAviso();
+        mostrarAdvertencia();
+        /* alert("Ingres contenido hp o como mas quieres?"); */
     }
 
 }
@@ -157,6 +165,7 @@ function enviarTextoEncriptado() {
     if (validarContenido()) {
         mostrarBoton();
         ocultarAviso();
+        ocultarAdvertencia();
         let Entrada = obtenerEntrada();
         let Salida = obtenerSalida();
         let textoEntrada = Entrada.value;
@@ -164,9 +173,9 @@ function enviarTextoEncriptado() {
         textoEntrada = desencriptarTexto(textoEntrada);
         Salida.value = textoEntrada;
         console.log(textoEntrada);
-    }
-    else {
+    } else {
         mostrarAviso();
+        mostrarAdvertencia();
     }
 }
 
@@ -210,6 +219,48 @@ function mostrarAviso() {
 
 function validarContenido() {
     let entrada = obtenerEntrada();
-    let contenido = entrada.value;
-    return contenido != "" ? true : false;
+    let contenido = entrada.value.trim();
+    return contenido != "" && validarTextoCorrecto(contenido) ? true : false;
+}
+
+function hasUppercase(str) {
+    return str !== str.toLowerCase();
+}
+
+/* console.log(hasUppercase('Hello')); // true
+console.log(hasUppercase('hello')); // false */
+
+function hasAccents(str) {
+    return /[áéíóúÁÉÍÓÚ]/.test(str);
+}
+
+/* console.log(hasAccents('Héllo')); // true
+console.log(hasAccents('Hello')); // false */
+
+function validarTextoCorrecto(texto) {
+    return hasUppercase(texto) == false && hasAccents(texto) == false ? true : false;
+}
+
+
+function ocultarAdvertencia() {
+    let advertencia = obtenerAdvertencia();
+    return advertencia.innerHTML = "";
+    /* return obtenerAdvertencia().style.display = "none"; */
+}
+
+function mostrarAdvertencia() {
+    let advertencia = obtenerAdvertencia();
+    return advertencia.innerHTML = '<img src="img/warning.svg" alt="warning" width="16" height="16"><span> Solo letras minúsculas y sin acentos </span>';
+}
+
+
+
+function newBoton() {
+    ocultarAdvertencia();
+    //console.log(obtenerAdvertencia());
+}
+
+function newBoton2() {
+    mostrarAdvertencia();
+    //console.log(obtenerAdvertencia());
 }
