@@ -125,7 +125,6 @@ function desencriptarTexto(texto) {
     desencriptado.
 
     */
-    /* var listaPalabras = entrada.split(" "); */
     var listaPalabras = texto.split(" ");
     var listaPalabrasDesencriptadas = [];
     var letrasEncriptadas = [];
@@ -145,11 +144,7 @@ function enviarTextoNormal() {
         mostrarBotonCopiar();
         ocultarAviso();
         ocultarAdvertencia();
-        /* let Entrada = obtenerEntrada(); */
-        /* let Salida = obtenerSalida(); */
-        /* let textoEntrada = Entrada.value; */
         let textoEntrada = obtenerEntrada().value;
-        /* textoEntrada = textoEntrada.toLowerCase(); */
         textoEntrada = encriptarTexto(textoEntrada);
         obtenerSalida().value = textoEntrada;
         console.log(textoEntrada);
@@ -157,7 +152,6 @@ function enviarTextoNormal() {
         ocultarBotonCopiar();
         mostrarAviso();
         mostrarAdvertencia();
-        /* alert("Ingres contenido hp o como mas quieres?"); */
     }
 
 }
@@ -167,10 +161,7 @@ function enviarTextoEncriptado() {
         mostrarBotonCopiar();
         ocultarAviso();
         ocultarAdvertencia();
-        /* let Entrada = obtenerEntrada();
-        let Salida = obtenerSalida(); */
         let textoEntrada = obtenerEntrada().value;
-        /* textoEntrada = textoEntrada.toLowerCase(); */
         textoEntrada = desencriptarTexto(textoEntrada);
         obtenerSalida().value = textoEntrada;
         console.log(textoEntrada);
@@ -226,15 +217,10 @@ function hasUppercase(str) {
     return str !== str.toLowerCase();
 }
 
-/* console.log(hasUppercase('Hello')); // true
-console.log(hasUppercase('hello')); // false */
 
 function hasAccents(str) {
     return /[áéíóúÁÉÍÓÚ]/.test(str);
 }
-
-/* console.log(hasAccents('Héllo')); // true
-console.log(hasAccents('Hello')); // false */
 
 function validarTextoCorrecto(texto) {
     return hasUppercase(texto) == false && hasAccents(texto) == false ? true : false;
@@ -249,14 +235,3 @@ function mostrarAdvertencia() {
     return obtenerAdvertencia().innerHTML = '<img src="img/warning.svg" alt="warning" width="16" height="16"><span> Solo letras minúsculas y sin acentos </span>';
 }
 
-
-
-function newBoton() {
-    ocultarAdvertencia();
-    //console.log(obtenerAdvertencia());
-}
-
-function newBoton2() {
-    mostrarAdvertencia();
-    //console.log(obtenerAdvertencia());
-}
