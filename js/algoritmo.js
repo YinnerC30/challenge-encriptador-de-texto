@@ -3,13 +3,11 @@ ocultarAdvertencia();
 //--- Obtengo los elementos HTML
 
 function obtenerEntrada() {
-    var Entrada = document.getElementById('areaEntrada');
-    return Entrada;
+    return document.getElementById('areaEntrada');
 }
 
 function obtenerSalida() {
-    var Salida = document.getElementById("areaSalida");
-    return Salida;
+    return document.getElementById("areaSalida");
 }
 
 function obtenerBoton() {
@@ -115,6 +113,7 @@ function validarEncriptadoPalabra(palabra) {
     palabra.includes("imes") ? resultado.push(3) : estado = false;
     palabra.includes("ober") ? resultado.push(4) : estado = false;
     palabra.includes("ufat") ? resultado.push(5) : estado = false;
+    delete estado;
     return resultado;
 }
 
@@ -143,17 +142,19 @@ function desencriptarTexto(texto) {
 //--- Funciones de los botones de la pagina
 function enviarTextoNormal() {
     if (validarContenido()) {
-        mostrarBoton();
+        mostrarBotonCopiar();
         ocultarAviso();
         ocultarAdvertencia();
-        let Entrada = obtenerEntrada();
-        let Salida = obtenerSalida();
-        let textoEntrada = Entrada.value;
+        /* let Entrada = obtenerEntrada(); */
+        /* let Salida = obtenerSalida(); */
+        /* let textoEntrada = Entrada.value; */
+        let textoEntrada = obtenerEntrada().value;
         /* textoEntrada = textoEntrada.toLowerCase(); */
         textoEntrada = encriptarTexto(textoEntrada);
-        Salida.value = textoEntrada;
+        obtenerSalida().value = textoEntrada;
         console.log(textoEntrada);
     } else {
+        ocultarBotonCopiar();
         mostrarAviso();
         mostrarAdvertencia();
         /* alert("Ingres contenido hp o como mas quieres?"); */
@@ -163,17 +164,18 @@ function enviarTextoNormal() {
 
 function enviarTextoEncriptado() {
     if (validarContenido()) {
-        mostrarBoton();
+        mostrarBotonCopiar();
         ocultarAviso();
         ocultarAdvertencia();
-        let Entrada = obtenerEntrada();
-        let Salida = obtenerSalida();
-        let textoEntrada = Entrada.value;
-        textoEntrada = textoEntrada.toLowerCase();
+        /* let Entrada = obtenerEntrada();
+        let Salida = obtenerSalida(); */
+        let textoEntrada = obtenerEntrada().value;
+        /* textoEntrada = textoEntrada.toLowerCase(); */
         textoEntrada = desencriptarTexto(textoEntrada);
-        Salida.value = textoEntrada;
+        obtenerSalida().value = textoEntrada;
         console.log(textoEntrada);
     } else {
+        ocultarBotonCopiar();
         mostrarAviso();
         mostrarAdvertencia();
     }
@@ -185,33 +187,30 @@ function copiarTexto() {
     navigator.clipboard.writeText(Salida.value);
 }
 
+// Hasta aquí llegue por ahora :)
 function borrar() {
-    let entrada = obtenerEntrada();
-    let salida = obtenerSalida();
-    entrada.value = "";
-    salida.value = "";
-    delete entrada;
-    delete salida;
-    enfocarEntrada();
-}
-
-function enfocarEntrada() {
+    obtenerEntrada().value = "";
+    obtenerSalida().value = "";
     obtenerEntrada().focus();
 }
 
-function mostrarBoton() {
-    let botonCopiar = obtenerBoton();
-    botonCopiar.style.display = 'block';
+
+function mostrarBotonCopiar() {
+    obtenerBoton().style.display = 'block';
+}
+
+function ocultarBotonCopiar() {
+    obtenerBoton().style.display = 'none';
 }
 
 
 function ocultarAviso() {
-    let aviso = obtenerAviso().style.display = 'none';
+    obtenerAviso().style.display = 'none';
     obtenerSalida().style.display = 'block';
 }
 
 function mostrarAviso() {
-    let aviso = obtenerAviso().style.display = 'block';
+    obtenerAviso().style.display = 'block';
     obtenerSalida().style.display = 'none';
 }
 
@@ -243,14 +242,11 @@ function validarTextoCorrecto(texto) {
 
 
 function ocultarAdvertencia() {
-    let advertencia = obtenerAdvertencia();
-    return advertencia.innerHTML = "";
-    /* return obtenerAdvertencia().style.display = "none"; */
+    obtenerAdvertencia().innerHTML = "";
 }
 
 function mostrarAdvertencia() {
-    let advertencia = obtenerAdvertencia();
-    return advertencia.innerHTML = '<img src="img/warning.svg" alt="warning" width="16" height="16"><span> Solo letras minúsculas y sin acentos </span>';
+    return obtenerAdvertencia().innerHTML = '<img src="img/warning.svg" alt="warning" width="16" height="16"><span> Solo letras minúsculas y sin acentos </span>';
 }
 
 

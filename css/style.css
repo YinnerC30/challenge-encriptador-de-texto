@@ -165,7 +165,7 @@ textarea::placeholder {
     width: 100%;
     height: 85%;
   }
- 
+
   #mensaje-informativo {
     height: 2vh;
     font-size: 15px;
@@ -221,7 +221,7 @@ textarea::placeholder {
     margin-top: 10px;
     text-align: left;
   }
-  
+
   .botones {
     width: 100%;
     height: 30%;
