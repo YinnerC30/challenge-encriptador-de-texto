@@ -1,32 +1,60 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap");
 
 :root {
-  --color-fondo: blue;
   --fuente-letra: "Open Sans", sans-serif;
+}
+
+*{
+  box-sizing: border-box;
 }
 
 body {
   background-color: #f3f5fc;
   font-family: var(--fuente-letra);
+  width: 100vw;
+  height: 100vh;
 }
 
 header {
-  width: 100vw;
-  height: 10vh;
+  width: 100%;
+  height: 10%;
 }
 
 header #logo-alura {
   margin-top: 10px;
+  width: 90px;
 }
 
-p {
+
+
+.texto {
   font-size: 20px;
   text-align: center;
 }
 
 #contenedor {
-  width: 100vw;
+  width: 100%;
+  height: 80%;
   display: flex;
+}
+
+#area-entrada {
+  border-radius: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  width: 65%;
+  height: 100%;
+}
+
+#area-salida {
+  display: inline-block;
+  background-color: #ced4da;
+  border-radius: 20px;
+  padding: 10px;
+  margin-right: 20px;
+  width: 35%;
+  height: 100%;
 }
 
 #areaEntrada,
@@ -43,36 +71,24 @@ p {
   display: none;
 }
 
-#area-entrada {
-  border-radius: 20px;
-  padding: 20px;
-  width: 60vw;
-  height: 80vh;
-}
 
-#area-salida {
-  display: inline-block;
-  background-color: #ced4da;
-  border-radius: 20px;
-  padding: 10px;
-  margin-right: 20px;
-  width: 35vw;
-  height: 80vh;
-}
 
 textarea#areaEntrada,
 textarea#areaSalida {
   width: 100%;
-  height: 60vh;
   resize: none;
 }
 
+textarea#areaEntrada {
+  height: 75%;
+}
+
 textarea#areaSalida {
-  height: 70vh;
+  height: 85%;
 }
 
 #mensaje-informativo {
-  height: 5vh;
+  height: 5%;
   font-size: 15px;
   margin-top: 10px;
   text-align: left;
@@ -84,7 +100,7 @@ textarea::placeholder {
 
 .botones {
   width: 100%;
-  height: 10vh;
+  height: 15%;
 }
 
 .boton {
@@ -126,10 +142,15 @@ textarea::placeholder {
   transition: 500ms;
 }
 
+#info-area-vacia {
+  display: block;
+  margin-top: 20%;
+}
+
 #figura-muneco {
   display: block;
   width: 60%;
-  height: 50vh;
+  height: 50%;
   margin: auto;
 }
 
@@ -143,6 +164,40 @@ textarea::placeholder {
   font-size: 15px;
 }
 
+footer {
+  display: flex;
+  width: 100%;
+  height: 10%;
+}
+
+#mensaje-creador {
+  height: 100%;
+  font-size: 5px;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#redes-sociales {
+  height: 100%;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.texto-footer {
+  font-size: 15px;
+  color: #052051;
+  margin: 0 10px;
+}
+
+img#github,
+#linkedln {
+  padding: 5px;
+}
+
 @media (max-width: 768px) {
   #figura-muneco {
     display: none;
@@ -150,44 +205,45 @@ textarea::placeholder {
 
   #contenedor {
     display: block;
-    width: 90vw;
-    height: 80vh;
+    width: 90%;
+    height: 80%;
     margin: auto;
   }
 
   #area-entrada {
     display: block;
+    padding: 0;
     margin: auto;
     margin-bottom: 20px;
-    width: 90vw;
-    height: 65%;
+    width: 100%;
+    height: 70%;
   }
 
   textarea#areaEntrada {
     width: 100%;
-    height: 85%;
+    height: 80%;
   }
 
   #mensaje-informativo {
-    height: 2vh;
+    height: 5%;
     font-size: 15px;
     margin-top: 10px;
     text-align: left;
   }
   .botones {
     width: 100%;
-    height: 10%;
+    height: 15%;
   }
 
   #area-salida {
     display: block;
-    width: 90vw;
+    width: 100%;
     height: 30%;
     margin: auto;
   }
 
   #info-area-vacia {
-    margin-top: 90px;
+    margin-top: 50px;
   }
 
   textarea#areaSalida {
@@ -199,8 +255,8 @@ textarea::placeholder {
 @media (max-width: 425px) {
   #contenedor {
     display: block;
-    width: 90vw;
-    height: 80vh;
+    width: 90%;
+    height: 80%;
     margin: auto;
   }
 
@@ -208,17 +264,17 @@ textarea::placeholder {
     display: block;
     padding: 0;
     margin: auto;
-    width: 90vw;
+    width: 100%;
     height: 65%;
     padding-bottom: 20px;
   }
 
   textarea#areaEntrada {
     width: 100%;
-    height: 60%;
+    height: 65%;
   }
   #mensaje-informativo {
-    height: 5vh;
+    height: 5%;
     font-size: 15px;
     margin-top: 10px;
     text-align: left;
@@ -236,7 +292,7 @@ textarea::placeholder {
   }
   #area-salida {
     display: block;
-    width: 80vw;
+    width: 100%;
     height: 30%;
     margin: 0;
     margin: auto;
@@ -251,5 +307,9 @@ textarea::placeholder {
   textarea#areaSalida {
     width: 100%;
     height: 70%;
+  }
+
+  p.texto-footer {
+    text-align: center;
   }
 }
