@@ -210,7 +210,7 @@ function mostrarAviso() {
 function validarContenido() {
     let entrada = obtenerEntrada();
     let contenido = entrada.value.trim();
-    return contenido != "" && validarTextoCorrecto(contenido) ? true : false;
+    return contenido != "" && validarTextoCorrecto(contenido) && validarCaracteresEspeciales(contenido) ? true : false;
 }
 
 function hasUppercase(str) {
@@ -226,6 +226,10 @@ function validarTextoCorrecto(texto) {
     return hasUppercase(texto) == false && hasAccents(texto) == false ? true : false;
 }
 
+function validarCaracteresEspeciales(string) {
+    return /^[a-zA-Z0-9 ]*$/.test(string);
+}
+
 
 function ocultarAdvertencia() {
     obtenerAdvertencia().innerHTML = "";
@@ -234,4 +238,3 @@ function ocultarAdvertencia() {
 function mostrarAdvertencia() {
     return obtenerAdvertencia().innerHTML = '<img src="img/warning.svg" alt="warning" width="16" height="16"><span> Solo letras minúsculas y sin acentos </span>';
 }
-

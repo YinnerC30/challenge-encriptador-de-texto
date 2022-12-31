@@ -55,6 +55,7 @@ p {
   background-color: #ced4da;
   border-radius: 20px;
   padding: 10px;
+  margin-right: 20px;
   width: 35vw;
   height: 80vh;
 }
@@ -157,8 +158,9 @@ textarea::placeholder {
   #area-entrada {
     display: block;
     margin: auto;
+    margin-bottom: 20px;
     width: 90vw;
-    height: 70%;
+    height: 65%;
   }
 
   textarea#areaEntrada {
@@ -207,7 +209,7 @@ textarea::placeholder {
     padding: 0;
     margin: auto;
     width: 90vw;
-    height: 70%;
+    height: 65%;
     padding-bottom: 20px;
   }
 
