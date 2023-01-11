@@ -21,6 +21,10 @@ function obtenerAviso() {
 function obtenerAdvertencia() {
     return document.getElementById("mensaje-informativo");
 }
+
+function obtenerBotonCopiar() {
+    return document.getElementById("botones-salida");
+}
 //--- Creo las funciones necesarias para encriptar una cadena de texto
 
 function encriptarLetra(letra) {
@@ -147,11 +151,11 @@ function enviarTextoNormal() {
         let textoEntrada = obtenerEntrada().value;
         textoEntrada = encriptarTexto(textoEntrada);
         obtenerSalida().value = textoEntrada;
-        console.log(textoEntrada);
     } else {
+        mostrarAdvertencia();
         ocultarBotonCopiar();
         mostrarAviso();
-        mostrarAdvertencia();
+        obtenerEntrada().focus();
     }
 
 }
@@ -164,11 +168,11 @@ function enviarTextoEncriptado() {
         let textoEntrada = obtenerEntrada().value;
         textoEntrada = desencriptarTexto(textoEntrada);
         obtenerSalida().value = textoEntrada;
-        console.log(textoEntrada);
     } else {
+        mostrarAdvertencia();
         ocultarBotonCopiar();
         mostrarAviso();
-        mostrarAdvertencia();
+        obtenerEntrada().focus();
     }
 }
 
@@ -178,10 +182,13 @@ function copiarTexto() {
     navigator.clipboard.writeText(Salida.value);
 }
 
-// Hasta aquí llegue por ahora :)
-function borrar() {
+
+function borrarTexto() {
+    ocultarAdvertencia();
     obtenerEntrada().value = "";
     obtenerSalida().value = "";
+    ocultarBotonCopiar();
+    mostrarAviso();
     obtenerEntrada().focus();
 }
 
@@ -198,6 +205,8 @@ function ocultarBotonCopiar() {
 function ocultarAviso() {
     obtenerAviso().style.display = 'none';
     obtenerSalida().style.display = 'block';
+    
+
 }
 
 function mostrarAviso() {
@@ -236,5 +245,5 @@ function ocultarAdvertencia() {
 }
 
 function mostrarAdvertencia() {
-    return obtenerAdvertencia().innerHTML = '<img src="img/warning.svg" alt="warning" width="16" height="16"><span> Solo letras minúsculas y sin acentos </span>';
+    return obtenerAdvertencia().innerHTML = `<img src="img/warning.svg" alt="warning" width="16" height="16"><span> Solo letras minúsculas y sin acentos </span>`;
 }

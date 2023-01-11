@@ -4,7 +4,7 @@
   --fuente-letra: "Open Sans", sans-serif;
 }
 
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -17,28 +17,26 @@ body {
 
 header {
   width: 100%;
-  height: 10%;
+  height: 10vh;
 }
 
 header #logo-alura {
   margin-top: 10px;
-  width: 90px;
+  width: 120px;
 }
 
-
-
 .texto {
-  font-size: 20px;
+  font-size: 1em;
   text-align: center;
 }
 
 #contenedor {
   width: 100%;
-  height: 80%;
+  height: 80vh;
   display: flex;
 }
 
-#area-entrada {
+#entrada {
   border-radius: 20px;
   padding-top: 20px;
   padding-right: 20px;
@@ -47,7 +45,7 @@ header #logo-alura {
   height: 100%;
 }
 
-#area-salida {
+#salida {
   display: inline-block;
   background-color: #ced4da;
   border-radius: 20px;
@@ -71,23 +69,25 @@ header #logo-alura {
   display: none;
 }
 
-
-
 textarea#areaEntrada,
 textarea#areaSalida {
-  width: 100%;
   resize: none;
 }
 
 textarea#areaEntrada {
+  width: 90%;
+  margin-left: 5%;
   height: 75%;
 }
 
 textarea#areaSalida {
+  width: 100%;
   height: 85%;
 }
 
 #mensaje-informativo {
+  width: 90%;
+  margin-left: 7%;
   height: 5%;
   font-size: 15px;
   margin-top: 10px;
@@ -98,9 +98,9 @@ textarea::placeholder {
   color: #495057;
 }
 
-.botones {
-  width: 100%;
-  height: 15%;
+.botones-entrada {
+  width: 90%;
+  margin: 0 auto;
 }
 
 .boton {
@@ -108,9 +108,10 @@ textarea::placeholder {
   border: none;
   border-radius: 15px;
   padding: 15px;
-  margin: 10px;
+  margin: 10px 0;
+  margin: 0% 2%;
   cursor: pointer;
-  width: 45%;
+  width: 28%;
   font-size: 15px;
   font-weight: bold;
 }
@@ -120,11 +121,16 @@ textarea::placeholder {
   color: #ffffff;
 }
 
+#btn-limpiar {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
 #btn-desencriptar,
 #btn-copiarTexto {
-  background-color: #ffffff;
-  color: #052051;
-  border: 1px solid #052051;
+  background-color: #757fb2;
+  color: #fff;
+
 }
 #btn-copiarTexto {
   display: none;
@@ -133,24 +139,31 @@ textarea::placeholder {
 }
 
 #btn-encriptar:hover {
-  background-color: #356ea9;
+  background-color: #0a3871;
   transition: 500ms;
 }
 #btn-desencriptar:hover,
 #btn-copiarTexto:hover {
-  background-color: #ced4da;
+  background-color: hsl(230, 23%, 42%);
+  transition: 500ms;
+}
+
+#btn-limpiar:hover {
+  background-color: #495057;
   transition: 500ms;
 }
 
 #info-area-vacia {
   display: block;
-  margin-top: 20%;
+  width: 90%;
+  height: 80%;
+  margin: 10% auto;
 }
 
 #figura-muneco {
   display: block;
-  width: 60%;
-  height: 50%;
+  width: 80%;
+  height: 80%;
   margin: auto;
 }
 
@@ -167,13 +180,13 @@ textarea::placeholder {
 footer {
   display: flex;
   width: 100%;
-  height: 10%;
+  height: 10vh;
 }
 
 #mensaje-creador {
   height: 100%;
   font-size: 5px;
-  width: 50vw;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -181,7 +194,7 @@ footer {
 
 #redes-sociales {
   height: 100%;
-  width: 50vw;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -199,6 +212,11 @@ img#github,
 }
 
 @media (max-width: 768px) {
+  header #logo-alura {
+    margin-top: 10px;
+    width: 150px;
+  }
+
   #figura-muneco {
     display: none;
   }
@@ -206,92 +224,135 @@ img#github,
   #contenedor {
     display: block;
     width: 90%;
-    height: 80%;
+    height: 80vh;
     margin: auto;
   }
 
-  #area-entrada {
+  #entrada {
     display: block;
     padding: 0;
     margin: auto;
-    margin-bottom: 20px;
     width: 100%;
-    height: 70%;
+    height: 60%;
   }
 
   textarea#areaEntrada {
     width: 100%;
-    height: 80%;
+    height: 75%;
+    margin: 0;
+    padding: 0 5%;
+    font-size: 1.5em;
+  }
+
+  .botones-entrada {
+    width: 100%;
+    height: 15%;
+    overflow: hidden;
   }
 
   #mensaje-informativo {
-    height: 5%;
+    height: 10%;
     font-size: 15px;
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-left: 3%;
     text-align: left;
   }
-  .botones {
+  .botones-salida {
     width: 100%;
     height: 15%;
   }
 
-  #area-salida {
+  #salida {
+    box-sizing: border-box;
     display: block;
+    margin-top: 5%;
     width: 100%;
-    height: 30%;
-    margin: auto;
-  }
-
-  #info-area-vacia {
-    margin-top: 50px;
+    height: 35%;
   }
 
   textarea#areaSalida {
     width: 100%;
-    height: 70%;
+    height: 80%;
+    padding: 3%;
+    padding-bottom: 0;
+    font-size: 1.5em;
+  }
+
+  #info-area-vacia {
+    margin-bottom: 0;
+    margin-top: 0;
+    overflow: hidden;
+  }
+
+  #aviso-grande {
+    margin-top: 20%;
+  }
+
+  #areaSalida{
+    height: 60%;
   }
 }
 
 @media (max-width: 425px) {
+
+  header{
+    height: 7vh;
+  }
+
+  header #logo-alura {
+    margin-top: 10px;
+    width: 50px;
+  }
+
   #contenedor {
+    box-sizing: border-box;
     display: block;
     width: 90%;
-    height: 80%;
+    height: 88vh;
     margin: auto;
   }
 
-  #area-entrada {
+  #entrada {
+    box-sizing: border-box;
+    font-size: 10px;
     display: block;
     padding: 0;
     margin: auto;
     width: 100%;
     height: 65%;
-    padding-bottom: 20px;
   }
 
   textarea#areaEntrada {
     width: 100%;
-    height: 65%;
+    height: 50%;
+    font-size: 1.5em;
   }
   #mensaje-informativo {
     height: 5%;
-    font-size: 15px;
-    margin-top: 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-left: 5%;
+    font-size: 1.2em;
     text-align: left;
   }
 
   .botones {
+    box-sizing: border-box;
     width: 100%;
-    height: 30%;
+    height: 40%;
   }
 
   .boton {
-    width: 100%;
-    margin: 0;
+    width: 90%;
+    font-size: 1.4em;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
     margin-bottom: 10px;
   }
-  #area-salida {
+  #salida {
     display: block;
+    font-size: 10px;
     width: 100%;
     height: 30%;
     margin: 0;
@@ -302,13 +363,24 @@ img#github,
 
   #info-area-vacia {
     margin-top: 40px;
+    font-size: 1.2em;
+  }
+
+  #aviso-grande {
+    margin: 0;
+    font-size: 1.5em;
+
   }
 
   textarea#areaSalida {
     width: 100%;
     height: 70%;
+    font-size: 1.2em;
   }
 
+  footer {
+    height: 5vh;
+  }
   p.texto-footer {
     text-align: center;
   }
