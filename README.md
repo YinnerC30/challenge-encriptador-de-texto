@@ -1,4 +1,4 @@
-("img/vista_encriptador.png")
+![Esta es una imagen de ejemplo](https://github.com/YinnerC30/challenge-encriptador-de-texto/blob/e93468d631ab97152f677fe6ea3438eb30ed486b/img/vista_encriptador.png)
 
 # Challenge ONE Principiante en Programación
 Sprint 01: Construye un encriptador de texto con Javascript
