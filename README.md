@@ -1,3 +1,5 @@
+("img/vista_encriptador.png")
+
 # Challenge ONE Principiante en Programación
 Sprint 01: Construye un encriptador de texto con Javascript
 
