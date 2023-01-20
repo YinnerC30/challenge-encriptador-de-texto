@@ -248,6 +248,10 @@ img#github,
     font-size: 1.5em;
   }
 
+  .boton:hover {
+    transform: scale(1.08);
+  }
+
   .botones-entrada {
     width: 100%;
     height: 15%;
