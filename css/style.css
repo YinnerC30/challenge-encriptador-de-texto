@@ -107,13 +107,17 @@ textarea::placeholder {
   font-family: inherit;
   border: none;
   border-radius: 15px;
-  padding: 15px;
+  padding: 10px;
   margin: 10px 0;
   margin: 0% 2%;
   cursor: pointer;
   width: 28%;
   font-size: 15px;
   font-weight: bold;
+}
+
+.boton:hover {
+  transform: scale(1.2);
 }
 
 #btn-encriptar {
