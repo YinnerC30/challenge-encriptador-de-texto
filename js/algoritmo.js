@@ -236,7 +236,7 @@ function validarTextoCorrecto(texto) {
 }
 
 function validarCaracteresEspeciales(string) {
-    return /^[a-zA-Z0-9 ]*$/.test(string);
+    return /^[a-zA-Z0-9 ñÑ]*$/.test(string);
 }
 
 
