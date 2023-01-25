@@ -219,7 +219,8 @@ function mostrarAviso() {
 function validarContenido() {
     let entrada = obtenerEntrada();
     let contenido = entrada.value.trim();
-    return contenido != "" && validarTextoCorrecto(contenido) && validarCaracteresEspeciales(contenido) ? true : false;
+    contenido = contenido.toLowerCase();
+    return contenido != "" && validarTextoCorrecto(contenido) ? true : false;
 }
 
 function hasUppercase(str) {
@@ -235,9 +236,9 @@ function validarTextoCorrecto(texto) {
     return hasUppercase(texto) == false && hasAccents(texto) == false ? true : false;
 }
 
-function validarCaracteresEspeciales(string) {
+/* function validarCaracteresEspeciales(string) {
     return /^[a-zA-Z0-9 ñÑ]*$/.test(string);
-}
+} */
 
 
 function ocultarAdvertencia() {

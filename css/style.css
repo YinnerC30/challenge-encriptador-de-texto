@@ -72,6 +72,7 @@ header #logo-alura {
 textarea#areaEntrada,
 textarea#areaSalida {
   resize: none;
+  text-transform: lowercase;
 }
 
 textarea#areaEntrada {
