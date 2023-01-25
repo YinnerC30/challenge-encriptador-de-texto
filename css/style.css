@@ -122,7 +122,7 @@ textarea::placeholder {
 }
 
 #btn-arreglar {
-  background-color: #609ED4;
+  background-color: #609ed4;
   color: #ffffff;
   display: none;
 }
@@ -141,7 +141,6 @@ textarea::placeholder {
 #btn-copiarTexto {
   background-color: #757fb2;
   color: #fff;
-
 }
 #btn-copiarTexto {
   display: none;
@@ -150,7 +149,7 @@ textarea::placeholder {
 }
 
 #btn-arreglar:hover {
-  background-color: #356E9A;
+  background-color: #356e9a;
   transition: 500ms;
 }
 
@@ -312,14 +311,13 @@ img#github,
     margin-top: 20%;
   }
 
-  #areaSalida{
+  #areaSalida {
     height: 60%;
   }
 }
 
 @media (max-width: 425px) {
-
-  header{
+  header {
     height: 7vh;
   }
 
@@ -393,7 +391,6 @@ img#github,
   #aviso-grande {
     margin: 0;
     font-size: 1.5em;
-
   }
 
   textarea#areaSalida {
