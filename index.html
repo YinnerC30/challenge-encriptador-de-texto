@@ -27,13 +27,13 @@
                     Solo letras minúsculas y sin acentos
                 </span>
             </div>
-            <div class="botones botones-entrada">
+            <div class="botones botones-entrada" id="botones-entrada">
+                <button type="submit" id="btn-arreglar" class="boton" onclick="corregirEntrada()">Arreglar</button>
                 <button type="submit" id="btn-encriptar" onclick="enviarTextoNormal()" class="boton">Encriptar</button>
                 <button type="submit" id="btn-desencriptar" onclick="enviarTextoEncriptado()"
                     class="boton">Desencriptar</button>
                 <button id="btn-limpiar" class="boton" onclick="borrarTexto()">Limpiar</button>
             </div>
-
         </div>
 
         <div id="salida">

@@ -25,6 +25,27 @@ function obtenerAdvertencia() {
 function obtenerBotonCopiar() {
     return document.getElementById("botones-salida");
 }
+
+function obtenerBtnEncriptar() {
+    return document.getElementById("btn-encriptar");
+}
+
+function obtenerBtnDesencriptar() {
+    return document.getElementById("btn-desencriptar");
+}
+
+function obtenerBtnArreglar() {
+    return document.getElementById("btn-arreglar");
+}
+
+function obtenerBotonesEntrada() {
+    return document.getElementById("botones-entrada");
+}
+
+function obtenerBtnLimpiar(){
+    return document.getElementById("btn-limpiar");
+}
+
 //--- Creo las funciones necesarias para encriptar una cadena de texto
 
 function encriptarLetra(letra) {
@@ -145,6 +166,7 @@ function desencriptarTexto(texto) {
 //--- Funciones de los botones de la pagina
 function enviarTextoNormal() {
     if (validarContenido()) {
+        ocultarBotonArreglar();
         mostrarBotonCopiar();
         ocultarAviso();
         ocultarAdvertencia();
@@ -154,6 +176,7 @@ function enviarTextoNormal() {
     } else {
         mostrarAdvertencia();
         ocultarBotonCopiar();
+        mostrarBotonArreglar();
         mostrarAviso();
         obtenerEntrada().focus();
     }
@@ -162,6 +185,7 @@ function enviarTextoNormal() {
 
 function enviarTextoEncriptado() {
     if (validarContenido()) {
+        ocultarBotonArreglar();
         mostrarBotonCopiar();
         ocultarAviso();
         ocultarAdvertencia();
@@ -171,6 +195,7 @@ function enviarTextoEncriptado() {
     } else {
         mostrarAdvertencia();
         ocultarBotonCopiar();
+        mostrarBotonArreglar();
         mostrarAviso();
         obtenerEntrada().focus();
     }
@@ -182,8 +207,45 @@ function copiarTexto() {
     navigator.clipboard.writeText(Salida.value);
 }
 
+function mostrarBotonArreglar() {
+    let tamanioPantalla = screen.width;
+    if (tamanioPantalla > 425) {
+    obtenerBotonesEntrada().style.width = '60%';
+    obtenerBtnArreglar().style.display = 'inline-block';
+    obtenerBtnArreglar().style.width = '45%';
+    obtenerBtnLimpiar().style.width = '45%';
+    }
+    else {
+        obtenerBotonesEntrada().style.width = '90%';
+        obtenerBtnArreglar().style.display = 'block';
+        obtenerBtnArreglar().style.width = '90%';
+        obtenerBtnLimpiar().style.width = '90%';
+    }
+
+    obtenerBtnEncriptar().style.display = 'none';
+    obtenerBtnDesencriptar().style.display = 'none';
+}
+
+function ocultarBotonArreglar() {
+    let tamanioPantalla = screen.width;
+    if (tamanioPantalla > 425) {
+        obtenerBotonesEntrada().style.width = '90%';
+        obtenerBtnEncriptar().style.display = 'inline-block';
+        obtenerBtnDesencriptar().style.display = 'inline-block';
+        obtenerBtnLimpiar().style.width = '28%';
+    }
+    else {
+        obtenerBotonesEntrada().style.width = '100%';
+        obtenerBtnEncriptar().style.display = 'block';
+        obtenerBtnDesencriptar().style.display = 'block';
+        obtenerBtnLimpiar().style.width = '90%';
+    }
+    obtenerBtnArreglar().style.display = 'none';
+}
+
 
 function borrarTexto() {
+    ocultarBotonArreglar();
     ocultarAdvertencia();
     obtenerEntrada().value = "";
     obtenerSalida().value = "";
@@ -205,7 +267,7 @@ function ocultarBotonCopiar() {
 function ocultarAviso() {
     obtenerAviso().style.display = 'none';
     obtenerSalida().style.display = 'block';
-    
+
 
 }
 
@@ -247,4 +309,19 @@ function ocultarAdvertencia() {
 
 function mostrarAdvertencia() {
     return obtenerAdvertencia().innerHTML = `<img src="img/warning.svg" alt="warning" width="16" height="16"><span> Solo letras minúsculas y sin acentos </span>`;
+}
+
+function corregirEntrada() {
+    let entrada = obtenerEntrada().value;
+    entrada = entrada.trim();
+    console.log(entrada);
+    entrada = entrada.replace(/á/g, "a");
+    entrada = entrada.replace(/ó/g, "o");
+    entrada = entrada.replace(/é/g, "e");
+    entrada = entrada.replace(/í/g, "i");
+    entrada = entrada.replace(/ú/g, "u");
+    console.log(entrada);
+    obtenerEntrada().value = entrada;
+    ocultarBotonArreglar();
+    ocultarAdvertencia();
 }

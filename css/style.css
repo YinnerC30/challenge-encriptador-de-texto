@@ -121,6 +121,12 @@ textarea::placeholder {
   transform: scale(1.2);
 }
 
+#btn-arreglar {
+  background-color: #609ED4;
+  color: #ffffff;
+  display: none;
+}
+
 #btn-encriptar {
   background-color: #052051;
   color: #ffffff;
@@ -141,6 +147,11 @@ textarea::placeholder {
   display: none;
   margin: auto;
   margin-top: 10px;
+}
+
+#btn-arreglar:hover {
+  background-color: #356E9A;
+  transition: 500ms;
 }
 
 #btn-encriptar:hover {
@@ -247,6 +258,10 @@ img#github,
     margin: 0;
     padding: 0 5%;
     font-size: 1.5em;
+  }
+
+  .boton {
+    width: 28%;
   }
 
   .boton:hover {
